@@ -1,20 +1,24 @@
-/* Add a tab */
-.addtabButton{
-    margin-right: 10px;
-    margin-left: 10px;
-}
-
 /* TabList */
 .tabClass{
+    margin-top: 10px;
     margin-right: 10px;
     margin-left: 10px;
     display: inline-block;
 }
 
-.selectTabButyon {
+.selectTabButton {
 
 }
 
 .closeTabButton {
 
+}
+
+/* Tab operations */
+.tabOperation{
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 200px;
+    display: inline-block;
 }

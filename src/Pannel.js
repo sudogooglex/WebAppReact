@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import TabList from './TabList';
 import TabDetail from './TabDetail';
-import AddTab from './AddTab';
-import CloseAllTabs from './CloseAllTabs';
+import TabOperation from './TabOperation';
 
 class Pannel extends Component {
     constructor() {
@@ -56,8 +55,7 @@ class Pannel extends Component {
         return (
             <div>
                 <TabList tabList={this.state.tabList} onTabClick={this.onTabClick} onCloseTabClick={this.onCloseTabClick}/>
-                <AddTab onAddTabClick={this.onAddTabClick}/>
-                <CloseAllTabs onCloseAllTabsClick={this.onCloseAllTabs}/>
+                <TabOperation onCloseAllTabsClick={this.onCloseAllTabs} onAddTabClick={this.onAddTabClick}/>
                 <TabDetail selected={this.state.selected} tabList={this.state.tabList}/>
             </div>
 );

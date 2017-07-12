@@ -8,9 +8,14 @@ class Pannel extends Component {
                 <div>
                     {this.props.tabList.map((tabNumber, step) => {
                         return (
-                            <button className='tabButton' key={tabNumber} onClick={() => this.props.onTabClick(tabNumber)}>
-                                {tabNumber}
-                            </button>
+                            <div key={tabNumber} className='tabClass'>
+                                <button className='selectTabButyon' onClick={() => this.props.onTabClick(tabNumber)}>
+                                    {tabNumber}
+                                </button>
+                                <button className='closeTabButton' onClick={() => this.props.onCloseTabClick(tabNumber)}>
+                                    X
+                                </button>
+                            </div>
                         );
                     })}
                 </div>

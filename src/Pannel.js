@@ -14,6 +14,7 @@ class Pannel extends Component {
         this.onTabClick = this.onTabClick.bind(this);
         this.onAddTabClick = this.onAddTabClick.bind(this);
         this.onCloseAllTabs = this.onCloseAllTabs.bind(this);
+        this.onCloseTabClick = this.onCloseTabClick.bind(this);
     }
 
     onTabClick(tabNumber) {
@@ -22,9 +23,22 @@ class Pannel extends Component {
         });
     }
 
+    onCloseTabClick(tabNumber) {
+        var tabListFromState = this.state.tabList;
+        var index = tabListFromState.indexOf(tabNumber);
+        if (index > -1) {
+            tabListFromState.splice(index, 1);
+        }
+        this.setState({
+            selected: 1,
+            tabList: tabListFromState
+        });
+    }
+
     onAddTabClick() {
         var tabListFromState = this.state.tabList;
-        tabListFromState.push(tabListFromState.length + 1);
+        var newTabNum = tabListFromState.length === 0 ? 1 : Math.max.apply(null, tabListFromState) + 1;
+        tabListFromState.push(newTabNum);
         this.setState({
             tabList: tabListFromState
         });
@@ -40,7 +54,7 @@ class Pannel extends Component {
     render() {
         return (
             <div>
-                <TabList tabList={this.state.tabList} onTabClick={this.onTabClick}/>
+                <TabList tabList={this.state.tabList} onTabClick={this.onTabClick} onCloseTabClick={this.onCloseTabClick}/>
                 <AddTab onAddTabClick={this.onAddTabClick}/>
                 <CloseAllTabs onCloseAllTabsClick={this.onCloseAllTabs}/>
                 <TabDetail selected={this.state.selected} tabList={this.state.tabList}/>

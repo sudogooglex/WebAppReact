@@ -1,9 +1,20 @@
-.tabButton{
+/* Add a tab */
+.addtabButton{
     margin-right: 10px;
     margin-left: 10px;
 }
 
-.addtabButton{
+/* TabList */
+.tabClass{
     margin-right: 10px;
     margin-left: 10px;
+    display: inline-block;
+}
+
+.selectTabButyon {
+
+}
+
+.closeTabButton {
+
 }

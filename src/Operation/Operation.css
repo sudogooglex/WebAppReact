@@ -1,0 +1,11 @@
+.tabOperation {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 200px;
+    display: inline-block;
+}
+
+.buttonOperation {
+    margin-right: 10px;
+}

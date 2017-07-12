@@ -29,8 +29,9 @@ class Pannel extends Component {
         if (index > -1) {
             tabListFromState.splice(index, 1);
         }
+        var selectedTab = tabListFromState.length === 0 ? 0 : tabListFromState[0];
         this.setState({
-            selected: 1,
+            selected: selectedTab,
             tabList: tabListFromState
         });
     }

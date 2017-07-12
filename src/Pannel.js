@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TabList from './TabList';
 import TabDetail from './TabDetail';
+import AddTab from './AddTab';
 
 class Pannel extends Component {
     constructor() {
@@ -9,20 +10,29 @@ class Pannel extends Component {
             selected: 1,
             tabList: [1, 2, 3]
         };
-        this.onClick = this.onClick.bind(this);
+        this.onTabClick = this.onTabClick.bind(this);
+        this.onAddTabClick = this.onAddTabClick.bind(this);
     }
 
-    onClick(tabNumber) {
+    onTabClick(tabNumber) {
         this.setState({
             selected: tabNumber
         });
     }
 
+    onAddTabClick(tabNumber) {
+        var tabListFromState = this.state.tabList;
+        tabListFromState.push(tabListFromState.length + 1);
+        this.setState({
+            tabList: tabListFromState
+        });
+    }
+
     render() {
-        console.log(this.state.selected)
         return (
             <div>
-                <TabList tabList={this.state.tabList} onClick={this.onClick}/>
+                <TabList tabList={this.state.tabList} onTabClick={this.onTabClick}/>
+                <AddTab onAddTabClick={this.onAddTabClick}/>
                 <TabDetail selected={this.state.selected} tabList={this.state.tabList}/>
             </div>
 );

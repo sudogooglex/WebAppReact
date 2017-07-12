@@ -9,7 +9,7 @@ class TabDetail extends Component {
                 <div>
                     {this.props.tabList.map((tabNumber, step) => {
                         return (
-                            this.props.selected === tabNumber ? <Tab name={tabNumber}/> : ''
+                            this.props.selected === tabNumber ? <Tab key = {tabNumber} name={tabNumber}/> : ''
                         );
                     })}
                 </div>
